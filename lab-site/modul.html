@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modül — tech.kirkyama.uk</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="css/style.css" />
+  <style>
+    html, body { height: 100%; overflow: hidden; }
+    /* sinif9haritalar.js CSS değişkenleri */
+    body {
+      --text-color: #e8dfc8;
+      --container-bg: #162030;
+      --border-color: rgba(160,130,60,0.18);
+    }
+    /* modül içindeki scrollbar */
+    #mapCanvas { overflow-y: auto; }
+  </style>
+</head>
+<body class="modul-page">
+
+<!-- ─── NAV ─── -->
+<nav style="position:relative; z-index:200;">
+  <a href="index.html" class="nav-brand">
+    <div class="nav-logo">K</div>
+    <div class="nav-wordmark"><span>tech</span><em>.kirkyama.uk</em></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html">← Tüm Araçlar</a></li>
+    <li><a href="https://kirkyama.uk" target="_blank" rel="noopener">kirkyama.uk</a></li>
+  </ul>
+</nav>
+
+<!-- ─── MODÜL LAYOUT ─── -->
+<div class="modul-layout">
+
+  <!-- Üst şerit -->
+  <div class="modul-topbar">
+    <a href="index.html" class="modul-back-btn">← Geri</a>
+    <div class="modul-title-bar">
+      <div class="modul-icon-box" id="modulIcon">⏳</div>
+      <span class="modul-name" id="modulName">Yükleniyor…</span>
+    </div>
+    <span class="modul-badge" id="modulBadge">—</span>
+  </div>
+
+  <!-- Çalışma alanı -->
+  <div class="modul-body">
+    <!-- Sol: kontroller (sinif9haritalar.js doldurur) -->
+    <div id="mapControlsContainer"></div>
+
+    <!-- Sağ: harita / canvas -->
+    <div id="mapCanvas">
+      <div class="modul-loading" id="loadingScreen">
+        <div class="spinner"></div>
+        <span>Modül Yükleniyor</span>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="js/sinif9haritalar.js"></script>
+<script src="js/motor.js"></script>
+</body>
+</html>
